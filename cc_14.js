@@ -58,3 +58,12 @@ function highlightHighPriorityTickets() {
         ticket.classList.add('other-priority');
     }
   }
+// Task 4 - Support Ticket Resolution & Event Bubbling
+document.getElementById('ticketContainer').addEventListener('click', (event) => {
+    if (event.target.classList.contains('resolve-btn')) {
+        event.target.closest('.ticket-card').remove();
+        event.stopPropagation();
+    }
+  });
+
+  
