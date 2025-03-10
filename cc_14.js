@@ -40,3 +40,21 @@ function createSupportTicket(customer, issue, priority) {
     divTicketContainer.appendChild(ticketCard);
     return ticketCard;
   }
+  // Task 3 - Highlighting High Priority Tickets
+function highlightHighPriorityTickets() {
+    document.querySelectorAll('.ticket-card').forEach(ticket => styleSingleCard(ticket));
+  }
+  
+  // Apply priority-based styling
+  function styleSingleCard(ticket) {
+    const priority = ticket.querySelector('.priority-label').textContent.replace('Priority: ', '').toLowerCase();
+    ticket.classList.remove('high-priority', 'medium-priority', 'other-priority');
+  
+    if (priority === 'high') {
+        ticket.classList.add('high-priority');
+    } else if (priority === 'medium') {
+        ticket.classList.add('medium-priority');
+    } else {
+        ticket.classList.add('other-priority');
+    }
+  }
