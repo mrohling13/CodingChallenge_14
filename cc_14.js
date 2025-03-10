@@ -2,28 +2,28 @@
 function createSupportTicket(customer, issue, priority) {
     let divTicketContainer = document.getElementById('ticketContainer');
     const ticketCard = document.createElement('div');
-    ticketCard.setAttribute('class', 'ticket-card');
+    ticketCard.setAttribute('class', 'ticket-card'); // Creates new div element to show a support ticket
   
     const custName = document.createElement('h2');
     custName.setAttribute('class', 'ticket-header');
     custName.textContent = customer;
-    ticketCard.appendChild(custName);
+    ticketCard.appendChild(custName); // Adding customer name as a heading
   
     const issueDesc = document.createElement('p');
     issueDesc.setAttribute('class', 'issue-description');
     issueDesc.textContent = issue;
-    ticketCard.appendChild(issueDesc);
+    ticketCard.appendChild(issueDesc); // desribes the issue 
   
     const priorityLabel = document.createElement('p');
     priorityLabel.setAttribute('class', 'priority-label');
     priorityLabel.textContent = `Priority: ${priority}`;
-    ticketCard.appendChild(priorityLabel);
+    ticketCard.appendChild(priorityLabel); // shows the priority
   
     // Create Edit Button
     const editBtn = document.createElement('button');
     editBtn.setAttribute('class', 'edit-btn');
     editBtn.textContent = 'Edit';
-    ticketCard.appendChild(editBtn);
+    ticketCard.appendChild(editBtn); 
   
     // Create Resolve Button
     const resolveBtn = document.createElement('button');
@@ -48,20 +48,20 @@ function highlightHighPriorityTickets() {
   // Apply priority-based styling
   function styleSingleCard(ticket) {
     const priority = ticket.querySelector('.priority-label').textContent.replace('Priority: ', '').toLowerCase();
-    ticket.classList.remove('high-priority', 'medium-priority', 'other-priority');
+    ticket.classList.remove('high-priority', 'medium-priority', 'other-priority'); // Removes priority styles
   
     if (priority === 'high') {
-        ticket.classList.add('high-priority');
+        ticket.classList.add('high-priority'); // High priority
     } else if (priority === 'medium') {
-        ticket.classList.add('medium-priority');
+        ticket.classList.add('medium-priority'); // Medium priority
     } else {
-        ticket.classList.add('other-priority');
+        ticket.classList.add('other-priority'); // Low priority
     }
   }
 // Task 4 - Support Ticket Resolution & Event Bubbling
 document.getElementById('ticketContainer').addEventListener('click', (event) => {
     if (event.target.classList.contains('resolve-btn')) {
-        event.target.closest('.ticket-card').remove();
+        event.target.closest('.ticket-card').remove(); // removes ticket when resolved 
         event.stopPropagation();
     }
   });
@@ -145,8 +145,8 @@ function enableInlineEditing(ticket, custName, issueDesc, priorityLabel) {
 document.addEventListener('DOMContentLoaded', () => {
     const initialTickets = [
         { customer: 'Paul George', issue: 'Cannot win to save his career', priority: 'High' },
-        { customer: 'Jalen Hurts', issue: 'Being a super bowl champ', priority: 'Medium' },
-        { customer: 'BruceDEO', issue: 'Wont stream', priority: 'Low' }
+        { customer: 'Jalen Hurts', issue: 'Being a Super Bowl MVP', priority: 'Medium' },
+        { customer: 'BruceDEO', issue: 'Wont stream :(', priority: 'Low' }
     ];
     initialTickets.forEach(ticket => createSupportTicket(ticket.customer, ticket.issue, ticket.priority));
     highlightHighPriorityTickets();
