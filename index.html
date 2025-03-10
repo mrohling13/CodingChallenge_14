@@ -1,0 +1,111 @@
+<!-- Task 1 - Base Structure Created -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Support Ticket System</title>
+    <style>
+        .ticket-card {
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            display: inline-block;
+            border: 2px solid black;
+            width: 250px;
+            text-align: center;
+        }
+        .high-priority {
+            background-color: rgb(223, 98, 98);
+        }
+        .medium-priority {
+            background-color: orange;
+        }
+        .other-priority {
+            background-color: lightblue;
+        }
+        .ticket-header {
+            color: rgba(66, 9, 200, 0.683);
+        }
+        header, footer {
+            text-align: center;
+            background-color: rgba(73, 143, 131, 0.888);
+            padding: 20px;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+        footer p {
+            margin-bottom: 10px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding-bottom: 80px;
+        }
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+        .resolve-btn, .edit-btn, .save-btn {
+            width: 100px;
+            margin: 5px;
+            padding: 5px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .resolve-btn {
+            background-color: red;
+            color: white;
+        }
+        .edit-btn {
+            background-color: green;
+            color: white;
+        }
+        .save-btn {
+            background-color: blue;
+            color: white;
+        }
+        input[type="text"], select {
+            width: 200px;
+            padding: 5px;
+            margin: 5px 0;
+        }
+        #addTicketBtn {
+            background-color: white;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border: 2px solid black;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Customer Support Ticket System</h1>
+    </header>
+
+    <main>
+        <div id="ticketContainer">
+
+        </div>
+        <div>
+
+
+            <button id="addTicketBtn">Add Ticket</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>2025 Malcartier's Customer Support System</p>
+    </footer>
+    <script src="cc_14.js"></script>
+
+</body>
+</html>
